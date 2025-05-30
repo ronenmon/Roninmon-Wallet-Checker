@@ -1,0 +1,12 @@
+[
+  {
+    "address": "renintashafa",
+    "type": "GTD",
+    "mints": 5
+  },
+  {
+    "address": "renintashafa2",
+    "type": "FCFS",
+    "mints": 2
+  }
+]
