@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roninmon WL Checker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: url('./background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: linear-gradient(360deg, #661A38 0%, #AE2C5F 84%, #CC3470 100%);
+border: 2px solid #D3BF2C;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #result {
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+text-align: center;
 
+color: #0BA345;
+
+border: 1px solid #000000;
+
+      margin-top: 1rem;
+ 
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Roninmon WL Checker</h2>
+    <input id="address" placeholder="Enter your Ronin wallet" />
+    <button onclick="checkWL()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const whitelist = {
+      "renintashafa": { type: "GTD", mints: 5 },
+      "renintashafa2": { type: "FCFS", mints: 2 }
+      // add your addresses here
+    };
+
+    function checkWL() {
+      const input = document.getElementById("address").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+      const wlData = whitelist[input];
+
+      if (wlData) {
+        result.innerText = `✅ You're whitelisted (${wlData.type}) with ${wlData.mints} mint(s).`;
+      } else {
+        result.innerText = "❌ Not whitelisted.";
+      }
+    }
+  </script>
+</body>
+</html>
