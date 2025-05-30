@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<style>
-body {
-   <img src="./background.jpg" alt="background"> ;
-}
-</style>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,7 +7,8 @@ body {
   <style>
     body {
       font-family: sans-serif;
-      background: #f0f2f5;
+      background: url('./background.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,7 +16,7 @@ body {
       margin: 0;
     }
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.9);
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -54,7 +50,7 @@ body {
 <body>
   <div class="card">
     <h2>Roninmon WL Checker</h2>
-    <input id="address" placeholder="Enter your Ronin wallet" />
+    <input id="address" placeholder="Enter your Ronin wallet (ronin:...)" />
     <button onclick="checkWL()">Check</button>
     <div id="result"></div>
   </div>
